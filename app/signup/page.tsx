@@ -1,9 +1,15 @@
-import React from 'react'
+import SignUpForm from "@/components/forms/signup-form";
+import PreviousPageButton from "@/components/go-back-route";
+import React from "react";
 
 const SignUpPage = () => {
   return (
-    <div>SignUpPage</div>
-  )
-}
+    <section>
+      <PreviousPageButton />
+      <h2>Sign up</h2>
+      <SignUpForm />
+    </section>
+  );
+};
 
-export default SignUpPage
+export default SignUpPage;

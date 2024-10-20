@@ -1,7 +1,13 @@
 import React from "react";
 
 const UserRewardPage = () => {
-  return <div>UserRewardPage</div>;
+  return (
+    <section>
+      <div>
+        <span>Powered by RAVING FANS</span>
+      </div>
+    </section>
+  );
 };
 
 export default UserRewardPage;

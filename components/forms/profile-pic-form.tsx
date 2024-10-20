@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const ProfilePicForm = () => {
-  return (
-    <div>ProfilePicForm</div>
-  )
-}
+  return <div>ProfilePicForm</div>;
+};
 
-export default ProfilePicForm
+export default ProfilePicForm;

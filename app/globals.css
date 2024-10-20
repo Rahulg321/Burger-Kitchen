@@ -4,6 +4,9 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
+
+    --main-yellow: #fdc62c;
+
     --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
     --card-foreground: 240 10% 3.9%;
@@ -30,6 +33,8 @@
     --radius: 0.5rem;
   }
   .dark {
+    --main-yellow: #fdc62c;
+
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
     --card: 240 10% 3.9%;

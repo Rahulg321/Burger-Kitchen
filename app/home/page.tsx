@@ -8,6 +8,11 @@ import DeliveryLogo from "@/public/deliveroo-logo.png";
 import JustEatsLogo from "@/public/just-eat.png";
 import OrderNowDialog from "@/components/dialogs/order-now-dialog";
 
+export const metadata = {
+  title: "Home Page",
+  description: "Burger Kitchen",
+};
+
 const HomePage = () => {
   return (
     <section>

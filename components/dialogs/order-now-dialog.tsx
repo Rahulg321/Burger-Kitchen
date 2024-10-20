@@ -25,8 +25,9 @@ import {
 import ProfilePicForm from "@/components/forms/profile-pic-form";
 import Image from "next/image";
 import LogoutLogo from "@/public/logout-logo.png";
+import UberEatsLogo from "@/public/Uber-Eats-Logo.png";
 
-export default function ProfilePicDialog() {
+export default function OrderNowDialog() {
   const [open, setOpen] = React.useState(false);
   const isDesktop = useMediaQuery("(min-width: 768px)");
 
@@ -34,14 +35,7 @@ export default function ProfilePicDialog() {
     return (
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogTrigger asChild>
-          <div className="bg-mainYellow w-fit rounded-full">
-            <Image
-              src="/profilePlaceholder.png"
-              alt="Profile user Placeholder"
-              height={100}
-              width={100}
-            />
-          </div>
+          <Button>Order Now</Button>
         </DialogTrigger>
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
@@ -56,34 +50,32 @@ export default function ProfilePicDialog() {
 
   return (
     <Drawer open={open} onOpenChange={setOpen}>
-      <DrawerTrigger asChild>
-        <div className="bg-mainYellow w-fit rounded-full">
-          <Image
-            src="/profilePlaceholder.png"
-            alt="Profile user Placeholder"
-            height={100}
-            width={100}
-          />
-        </div>
-      </DrawerTrigger>
+      <DialogTrigger asChild>
+        <Button variant={"outline"}>Order Now</Button>
+      </DialogTrigger>
       <DrawerContent>
         <DrawerHeader className="text-left">
           <DrawerTitle className="flex items-center justify-center">
             <Image src={LogoutLogo} alt="logout-logo" width={50} height={50} />
           </DrawerTitle>
           <DrawerDescription>
-            <h4 className="font-bold uppercase text-black">
-              change profile photo
-            </h4>
+            <h4 className="font-bold uppercase text-black">order now</h4>
             <span className="text-muted-foreground">
-              Would you like to take a new photo or choose an existing one?
+              Finish your order and enjoy tasty rewards. Hungry now? You’re just
+              one click away from satisfaction!
             </span>
           </DrawerDescription>
         </DrawerHeader>
+        <div className="mt-4 flex items-center justify-center">
+          <Image
+            src={UberEatsLogo}
+            alt="uber eats logo"
+            height={150}
+            width={150}
+          />
+        </div>
         <DrawerFooter className="pt-2">
-          <Button className="bg-mainYellow font-bold uppercase">
-            Take a Photo
-          </Button>
+          <Button className="bg-mainYellow font-bold uppercase">Proceed</Button>
           <DrawerClose asChild>
             <Button variant="outline">Cancel</Button>
           </DrawerClose>

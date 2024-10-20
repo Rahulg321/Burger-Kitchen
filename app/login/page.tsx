@@ -4,10 +4,15 @@ import React from "react";
 
 const LoginPage = () => {
   return (
-    <section>
-      <PreviousPageButton />
-      <h2>Log in</h2>
+    <section className="block-space big-container">
+      <div className="mb-4 flex items-center">
+        <PreviousPageButton />
+        <h2>Log in</h2>
+      </div>
       <LoginForm />
+      <p className="mt-auto text-center">
+        Powered by <span className="font-bold">RAVING FANS</span>
+      </p>
     </section>
   );
 };

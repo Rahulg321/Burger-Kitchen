@@ -43,7 +43,7 @@ const LoginForm = () => {
     console.log(values);
   }
   return (
-    <div>
+    <div className="flex h-screen flex-col justify-center">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="">
           <FormField
@@ -55,9 +55,7 @@ const LoginForm = () => {
                 <FormControl>
                   <Input placeholder="shadcn" {...field} type="email" />
                 </FormControl>
-                <FormDescription>
-                  This is your public display name.
-                </FormDescription>
+
                 <FormMessage />
               </FormItem>
             )}
@@ -71,23 +69,26 @@ const LoginForm = () => {
                 <FormControl>
                   <Input placeholder="shadcn" {...field} type="password" />
                 </FormControl>
-                <FormDescription>
-                  This is your public display name.
-                </FormDescription>
+
                 <FormMessage />
               </FormItem>
             )}
           />
 
-          <span>Forgot Password</span>
-
-          <Button type="submit">REGISTER</Button>
+          <span className="text-mainYellow mt-2 block text-sm underline">
+            Forgot Password
+          </span>
         </form>
       </Form>
-      <span>
-        Don&apos;t have an account? <Link href={"/signup"}>Sign Up</Link>
+      <Button type="submit" className="mt-auto w-full uppercase">
+        REGISTER
+      </Button>
+      <span className="mt-4 block text-center text-muted-foreground">
+        Don't have an account?{" "}
+        <Link href={"/signup"} className="text-mainYellow">
+          Signup
+        </Link>
       </span>
-      <span>Powered by RAVING FANS</span>
     </div>
   );
 };

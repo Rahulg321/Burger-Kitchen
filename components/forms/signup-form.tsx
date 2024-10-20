@@ -64,39 +64,37 @@ const SignUpForm = () => {
   return (
     <div>
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="">
-          <FormField
-            control={form.control}
-            name="firstName"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Username</FormLabel>
-                <FormControl>
-                  <Input placeholder="shadcn" {...field} />
-                </FormControl>
-                <FormDescription>
-                  This is your public display name.
-                </FormDescription>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="lastName"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Username</FormLabel>
-                <FormControl>
-                  <Input placeholder="shadcn" {...field} />
-                </FormControl>
-                <FormDescription>
-                  This is your public display name.
-                </FormDescription>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+          <div className="flex gap-4">
+            <FormField
+              control={form.control}
+              name="firstName"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>First Name</FormLabel>
+                  <FormControl>
+                    <Input placeholder="First Name" {...field} />
+                  </FormControl>
+
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="lastName"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Last Name</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Last Name" {...field} />
+                  </FormControl>
+
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
           <FormField
             control={form.control}
             name="email"
@@ -104,11 +102,9 @@ const SignUpForm = () => {
               <FormItem>
                 <FormLabel>Email</FormLabel>
                 <FormControl>
-                  <Input placeholder="shadcn" {...field} type="email" />
+                  <Input placeholder="Email Address" {...field} type="email" />
                 </FormControl>
-                <FormDescription>
-                  This is your public display name.
-                </FormDescription>
+
                 <FormMessage />
               </FormItem>
             )}
@@ -120,11 +116,8 @@ const SignUpForm = () => {
               <FormItem>
                 <FormLabel>Password</FormLabel>
                 <FormControl>
-                  <Input placeholder="shadcn" {...field} type="password" />
+                  <Input placeholder="Password" {...field} type="password" />
                 </FormControl>
-                <FormDescription>
-                  This is your public display name.
-                </FormDescription>
                 <FormMessage />
               </FormItem>
             )}
@@ -137,11 +130,13 @@ const SignUpForm = () => {
               <FormItem>
                 <FormLabel>Confirm Password</FormLabel>
                 <FormControl>
-                  <Input placeholder="shadcn" {...field} type="password" />
+                  <Input
+                    placeholder="Confirm Password"
+                    {...field}
+                    type="password"
+                  />
                 </FormControl>
-                <FormDescription>
-                  This is your public display name.
-                </FormDescription>
+
                 <FormMessage />
               </FormItem>
             )}
@@ -154,19 +149,17 @@ const SignUpForm = () => {
               <FormItem>
                 <FormLabel>Birthday</FormLabel>
                 <FormControl>
-                  <Input placeholder="shadcn" {...field} type="date" />
+                  <Input
+                    placeholder="Select your birthday"
+                    {...field}
+                    type="date"
+                  />
                 </FormControl>
 
                 <FormMessage />
               </FormItem>
             )}
           />
-          {/* <Calendar
-          mode="single"
-          selected={date}
-          onSelect={setDate}
-          className="rounded-md border"
-        /> */}
           <div className="items-top flex space-x-2">
             <Checkbox id="terms1" />
             <div className="grid gap-1.5 leading-none">
@@ -190,16 +183,26 @@ const SignUpForm = () => {
               </label>
             </div>
           </div>
-          <span>
+          <span className="mt-8 block text-sm text-muted-foreground">
             By continuing, you accept the Terms & Conditions and Privacy Policy.
           </span>
-          <Button type="submit">REGISTER</Button>
+          <Button type="submit" className="w-full">
+            REGISTER
+          </Button>
+          {/* <Calendar
+          mode="single"
+          selected={date}
+          onSelect={setDate}
+          className="rounded-md border"
+        /> */}
         </form>
       </Form>
-      <span>
-        Already have an account? <Link href={"/login"}>Login</Link>
+      <span className="mt-4 block text-center text-muted-foreground">
+        Already have an account?{" "}
+        <Link href={"/login"} className="text-mainYellow">
+          Login
+        </Link>
       </span>
-      <span>Powered by RAVING FANS</span>
     </div>
   );
 };

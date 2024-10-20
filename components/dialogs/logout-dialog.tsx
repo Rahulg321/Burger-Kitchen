@@ -5,6 +5,7 @@ import {
   Dialog,
   DialogContent,
   DialogDescription,
+  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -17,7 +18,7 @@ import { useRouter } from "next/navigation";
 
 const LogoutDialog = () => {
   const router = useRouter();
-  const [openDialog, setOpenDialog] = useState(true);
+  const [openDialog, setOpenDialog] = useState(false);
 
   return (
     <Dialog open={openDialog} onOpenChange={setOpenDialog}>
@@ -42,25 +43,27 @@ const LogoutDialog = () => {
               Are you sure you want to log out?
             </span>
           </DialogDescription>
-          <div className="mt-6 space-y-2">
-            <Button
-              className="w-full uppercase"
-              variant={"outline"}
-              size={"lg"}
-            >
-              Log Out
-            </Button>
+          <DialogFooter>
+            <div className="mt-6 space-y-2">
+              <Button
+                className="w-full uppercase"
+                variant={"outline"}
+                size={"lg"}
+              >
+                Log Out
+              </Button>
 
-            <Button
-              className="bg-mainYellow w-full uppercase"
-              size={"lg"}
-              onClick={() => {
-                setOpenDialog(false);
-              }}
-            >
-              Cancel
-            </Button>
-          </div>
+              <Button
+                className="bg-mainYellow w-full uppercase"
+                size={"lg"}
+                onClick={() => {
+                  setOpenDialog(false);
+                }}
+              >
+                Cancel
+              </Button>
+            </div>
+          </DialogFooter>
         </DialogHeader>
       </DialogContent>
     </Dialog>

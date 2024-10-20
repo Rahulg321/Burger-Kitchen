@@ -8,7 +8,7 @@ const LogoutButton = () => {
   return (
     <Button
       variant={"link"}
-      size={"default"}
+      size={"lg"}
       onClick={() => {}}
       className="text-red-500"
     >

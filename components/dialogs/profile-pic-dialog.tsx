@@ -1,9 +1,9 @@
 "use client";
 
-import * as React from "react"
+import * as React from "react";
 
-import { useMediaQuery } from "@/hooks/use-media-query"
-import { Button } from "@/components/ui/button"
+import { useMediaQuery } from "@/hooks/use-media-query";
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -11,7 +11,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
+} from "@/components/ui/dialog";
 import {
   Drawer,
   DrawerClose,
@@ -21,41 +21,54 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from "@/components/ui/drawer"
-import ProfilePicForm from "@/components/forms/profile-pic-form"
+} from "@/components/ui/drawer";
+import ProfilePicForm from "@/components/forms/profile-pic-form";
+import Image from "next/image";
 
 export default function ProfilePicDialog() {
-  const [open, setOpen] = React.useState(false)
-  const isDesktop = useMediaQuery("(min-width: 768px)")
+  const [open, setOpen] = React.useState(false);
+  const isDesktop = useMediaQuery("(min-width: 768px)");
 
   if (isDesktop) {
     return (
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogTrigger asChild>
-          <Button variant="outline">Edit Profile</Button>
+          <div className="bg-mainYellow w-fit rounded-full">
+            <Image
+              src="/profilePlaceholder.png"
+              alt="Profile user Placeholder"
+              height={100}
+              width={100}
+            />
+          </div>
         </DialogTrigger>
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
             <DialogTitle>Edit profile</DialogTitle>
-            <DialogDescription>
-            </DialogDescription>
+            <DialogDescription></DialogDescription>
           </DialogHeader>
           <ProfilePicForm />
         </DialogContent>
       </Dialog>
-    )
+    );
   }
 
   return (
     <Drawer open={open} onOpenChange={setOpen}>
       <DrawerTrigger asChild>
-        <Button variant="outline">Edit Profile</Button>
+        <div className="bg-mainYellow w-fit rounded-full">
+          <Image
+            src="/profilePlaceholder.png"
+            alt="Profile user Placeholder"
+            height={100}
+            width={100}
+          />
+        </div>
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader className="text-left">
           <DrawerTitle>Edit profile</DrawerTitle>
-          <DrawerDescription>
-          </DrawerDescription>
+          <DrawerDescription></DrawerDescription>
         </DrawerHeader>
         <ProfilePicForm />
         <DrawerFooter className="pt-2">
@@ -65,6 +78,5 @@ export default function ProfilePicDialog() {
         </DrawerFooter>
       </DrawerContent>
     </Drawer>
-  )
+  );
 }
-

@@ -6,7 +6,8 @@ import BurgerIcon from "@/public/activity/burgerYellowIcon.png";
 import CakeIcon from "@/public/activity/cakeIcon.png";
 import Image from "next/image";
 
-const UserActivityPage = ({ params }: { params: { userId: string } }) => {
+const UserActivityPage = async (props: { params: Promise<{ userId: string }> }) => {
+  const params = await props.params;
   return (
     <React.Fragment>
       <section className="big-container block-space flex min-h-screen flex-col justify-between">

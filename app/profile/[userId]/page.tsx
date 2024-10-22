@@ -5,11 +5,10 @@ import LogoutButton from "@/components/logout-button";
 import Link from "next/link";
 import React from "react";
 
-export default function ProfilePage({
-  params,
-}: {
-  params: { userId: string };
+export default async function ProfilePage(props: {
+  params: Promise<{ userId: string }>;
 }) {
+  const params = await props.params;
   return (
     <React.Fragment>
       <section className="block-space big-container">
@@ -22,6 +21,7 @@ export default function ProfilePage({
           <h3>RAUNAK DAS</h3>
           <span>test@gmail.com</span>
         </div>
+
         <div className="space-y-4">
           <ProfileLinkComponent
             href={`/profile/${12312}/details`}
@@ -67,7 +67,7 @@ function ProfileLinkComponent({
   return (
     <Link
       href={href}
-      className="bg-mainYellow block w-full rounded-lg border px-2 py-4 text-center"
+      className="block w-full rounded-lg border bg-mainYellow px-2 py-4 text-center"
     >
       {content}
     </Link>

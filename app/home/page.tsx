@@ -1,6 +1,6 @@
 import AppBar from "@/components/AppBar";
 import StampCard from "@/components/StampCard";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import React from "react";
 import OfferTemplate from "@/public/offer-template.png";
 import UberEatsLogo from "@/public/Uber-Eats-Logo.png";
@@ -68,7 +68,7 @@ const HomePage = () => {
 
 export default HomePage;
 
-const LogoCard = ({ imgSrc }: { imgSrc: any }) => {
+const LogoCard = ({ imgSrc }: { imgSrc: StaticImageData }) => {
   return (
     <div className="relative h-10 flex-1 rounded-lg border-2 px-4 py-2">
       <Image src={imgSrc} alt={"Uber-Eats-Logo"} fill />

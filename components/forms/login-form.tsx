@@ -75,7 +75,7 @@ const LoginForm = () => {
             )}
           />
 
-          <span className="text-mainYellow mt-2 block text-sm underline">
+          <span className="mt-2 block text-sm text-mainYellow underline">
             Forgot Password
           </span>
         </form>
@@ -84,7 +84,7 @@ const LoginForm = () => {
         REGISTER
       </Button>
       <span className="mt-4 block text-center text-muted-foreground">
-        Don't have an account?{" "}
+        Don&apos;t have an account?{" "}
         <Link href={"/signup"} className="text-mainYellow">
           Signup
         </Link>

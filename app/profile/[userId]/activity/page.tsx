@@ -4,9 +4,11 @@ import React from "react";
 import Vector from "@/public/activity/Vector.png";
 import BurgerIcon from "@/public/activity/burgerYellowIcon.png";
 import CakeIcon from "@/public/activity/cakeIcon.png";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
-const UserActivityPage = async (props: { params: Promise<{ userId: string }> }) => {
+const UserActivityPage = async (props: {
+  params: Promise<{ userId: string }>;
+}) => {
   const params = await props.params;
   return (
     <React.Fragment>
@@ -63,7 +65,7 @@ function ActivityCard({
 }: {
   heading: string;
   tagline: string;
-  img: any;
+  img: StaticImageData;
 }) {
   return (
     <div className="flex items-center">

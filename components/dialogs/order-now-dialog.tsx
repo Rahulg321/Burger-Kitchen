@@ -59,7 +59,9 @@ export default function OrderNowDialog() {
             <Image src={LogoutLogo} alt="logout-logo" width={50} height={50} />
           </DrawerTitle>
           <DrawerDescription>
-            <h4 className="font-bold uppercase text-black">order now</h4>
+            <span className="block text-center text-2xl font-bold uppercase text-black">
+              order now
+            </span>
             <span className="text-muted-foreground">
               Finish your order and enjoy tasty rewards. Hungry now? You’re just
               one click away from satisfaction!

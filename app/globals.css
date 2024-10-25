@@ -137,7 +137,7 @@ figcaption {
 }
 
 .block-space {
-  padding-block: min(12vh, 17rem);
+  padding-block: min(6vh, 8rem); /* Reduced values for smaller screens */
 }
 
 .block-space-large {

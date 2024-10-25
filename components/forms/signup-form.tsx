@@ -14,6 +14,18 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import React, { useTransition } from "react";
+import { Calendar } from "../ui/calendar";
+import Link from "next/link";
+import { Checkbox } from "../ui/checkbox";
+import Image from "next/image";
+import BirthdayVector from "@/public/tooltip-birthday-vector.png";
 
 const formSchema = z
   .object({
@@ -34,11 +46,6 @@ const formSchema = z
     path: ["confirmPassword"],
     message: "Passwords must match",
   });
-
-import React, { useTransition } from "react";
-import { Calendar } from "../ui/calendar";
-import Link from "next/link";
-import { Checkbox } from "../ui/checkbox";
 
 const SignUpForm = () => {
   const [date, setDate] = React.useState<Date | undefined>(new Date());
@@ -64,7 +71,7 @@ const SignUpForm = () => {
   return (
     <div>
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="">
           <div className="flex gap-4">
             <FormField
               control={form.control}
@@ -95,109 +102,103 @@ const SignUpForm = () => {
               )}
             />
           </div>
-          <FormField
-            control={form.control}
-            name="email"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Email</FormLabel>
-                <FormControl>
-                  <Input placeholder="Email Address" {...field} type="email" />
-                </FormControl>
+          <div className="mb-2 mt-4 space-y-2">
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Email</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder="Email Address"
+                      {...field}
+                      type="email"
+                    />
+                  </FormControl>
 
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="password"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Password</FormLabel>
-                <FormControl>
-                  <Input placeholder="Password" {...field} type="password" />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="birthday"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Birthday</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder="Select your birthday"
+                      {...field}
+                      type="date"
+                    />
+                  </FormControl>
 
-          <FormField
-            control={form.control}
-            name="confirmPassword"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Confirm Password</FormLabel>
-                <FormControl>
-                  <Input
-                    placeholder="Confirm Password"
-                    {...field}
-                    type="password"
-                  />
-                </FormControl>
-
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-
-          <FormField
-            control={form.control}
-            name="birthday"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Birthday</FormLabel>
-                <FormControl>
-                  <Input
-                    placeholder="Select your birthday"
-                    {...field}
-                    type="date"
-                  />
-                </FormControl>
-
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <div className="items-top flex space-x-2">
-            <Checkbox id="terms1" />
-            <div className="grid gap-1.5 leading-none">
-              <label
-                htmlFor="terms1"
-                className="text-sm leading-none text-muted-foreground peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-              >
-                Yes, sign me up for news, treats and offers mainly via email.
-              </label>
-            </div>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
           </div>
 
-          <div className="items-top flex space-x-2">
-            <Checkbox id="terms1" />
-            <div className="grid gap-1.5 leading-none">
-              <label
-                htmlFor="terms1"
-                className="text-sm leading-none text-muted-foreground peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-              >
-                Accept terms and conditions
-              </label>
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <div className="flex items-center gap-2">
+                  <Image src={BirthdayVector} alt="birthday icon vector" />
+                  <span className="text-sm text-muted-foreground">
+                    Birthday Reward
+                  </span>
+                </div>
+              </TooltipTrigger>
+              <TooltipContent className="bg-mainYellow text-black">
+                <p className="text-sm">
+                  Get a special surprise on your birthday from GBK. Enter your
+                  date of birth to earn your reward.
+                </p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+
+          <div className="mt-12 space-y-4">
+            <div className="items-top flex space-x-2">
+              <Checkbox id="terms1" />
+              <div className="grid gap-1.5 leading-none">
+                <label
+                  htmlFor="terms1"
+                  className="text-sm leading-none text-muted-foreground peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                >
+                  Yes, sign me up for news, treats and offers mainly via email.
+                </label>
+              </div>
+            </div>
+
+            <div className="items-top flex space-x-2">
+              <Checkbox id="terms1" />
+              <div className="grid gap-1.5 leading-none">
+                <label
+                  htmlFor="terms1"
+                  className="text-sm leading-none text-muted-foreground peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                >
+                  Accept terms and conditions
+                </label>
+              </div>
             </div>
           </div>
-          <span className="mt-8 block text-sm text-muted-foreground">
-            By continuing, you accept the Terms & Conditions and Privacy Policy.
+          <span className="mt-8 block text-xs text-muted-foreground">
+            By continuing, you accept the{" "}
+            <span className="underline">Terms & Conditions</span> and
+            <span className="underline">Privacy Policy.</span>
           </span>
-          <Button type="submit" className="w-full">
+          <Button
+            type="submit"
+            className="font-pduRegular mt-4 w-full uppercase"
+          >
             REGISTER
           </Button>
-          {/* <Calendar
-          mode="single"
-          selected={date}
-          onSelect={setDate}
-          className="rounded-md border"
-        /> */}
         </form>
       </Form>
-      <span className="mt-4 block text-center text-muted-foreground">
+      <span className="mt-4 block text-center text-sm text-muted-foreground">
         Already have an account?{" "}
         <Link href={"/login"} className="text-mainYellow">
           Login

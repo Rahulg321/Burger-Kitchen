@@ -15,13 +15,66 @@ const UserActivityPage = async (props: {
     <React.Fragment>
       <section className="big-container block-space flex min-h-screen flex-col justify-between">
         <div>
-          <div className="mb-6 flex items-center gap-4">
-            <PreviousPageButton />
-
-            <h3 className="font-bold uppercase">My Activity</h3>
+          <div className="sticky top-0 z-10 bg-white py-4">
+            <div className="mb-6 flex items-center gap-4">
+              <PreviousPageButton />
+              <h3 className="font-pduRegular font-semibold uppercase tracking-wide">
+                My Activity
+              </h3>
+            </div>
           </div>
 
           <div className="flex-grow space-y-4">
+            <ActivityCard
+              img={Vector}
+              heading="Any Burger and Fries for $15"
+              tagline="Exclusive Offer | 3 Hours ago"
+            />
+            <ActivityCard
+              img={BurgerIcon}
+              heading="1st Stamp Earned"
+              tagline="Reward Earned | 1 Day ago"
+            />
+            <ActivityCard
+              img={Vector}
+              heading="Free Milkshake on Download"
+              tagline="Successfully Redeemed | 2 Day ago"
+            />
+            <ActivityCard
+              img={CakeIcon}
+              heading="Free Fried Chicken"
+              tagline="Exclusive Offer | 3 Hours ago"
+            />
+            <ActivityCard
+              img={Vector}
+              heading="Free Chips on Registration"
+              tagline="Reward Expired | 4 Day ago"
+            />
+            <ActivityCard
+              img={Vector}
+              heading="Any Burger and Fries for $15"
+              tagline="Exclusive Offer | 3 Hours ago"
+            />
+            <ActivityCard
+              img={BurgerIcon}
+              heading="1st Stamp Earned"
+              tagline="Reward Earned | 1 Day ago"
+            />
+            <ActivityCard
+              img={Vector}
+              heading="Free Milkshake on Download"
+              tagline="Successfully Redeemed | 2 Day ago"
+            />
+            <ActivityCard
+              img={CakeIcon}
+              heading="Free Fried Chicken"
+              tagline="Exclusive Offer | 3 Hours ago"
+            />
+            <ActivityCard
+              img={Vector}
+              heading="Free Chips on Registration"
+              tagline="Reward Expired | 4 Day ago"
+            />
             <ActivityCard
               img={Vector}
               heading="Any Burger and Fries for $15"

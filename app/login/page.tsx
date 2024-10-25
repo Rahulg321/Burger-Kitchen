@@ -7,7 +7,9 @@ const LoginPage = () => {
     <section className="block-space big-container">
       <div className="mb-4 flex items-center">
         <PreviousPageButton />
-        <h2>Log in</h2>
+        <h3 className="font-pduRegular font-semibold uppercase tracking-wide">
+          Log in
+        </h3>
       </div>
       <LoginForm />
       <p className="mt-auto text-center">

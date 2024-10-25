@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -15,9 +14,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import React, { useTransition } from "react";
-import { Calendar } from "../ui/calendar";
 import Link from "next/link";
-import { Checkbox } from "../ui/checkbox";
 
 const formSchema = z.object({
   email: z.string().email({ message: "Invalid email address" }),
@@ -38,57 +35,60 @@ const LoginForm = () => {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
     console.log(values);
   }
+
   return (
-    <div className="flex h-screen flex-col justify-center">
-      <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="">
-          <FormField
-            control={form.control}
-            name="email"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Email</FormLabel>
-                <FormControl>
-                  <Input placeholder="shadcn" {...field} type="email" />
-                </FormControl>
+    <div className="flex min-h-[80dvh] flex-col justify-between px-4">
+      {/* Scrollable form content */}
+      <div className="flex flex-col justify-center overflow-y-auto">
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Email</FormLabel>
+                  <FormControl>
+                    <Input placeholder="shadcn" {...field} type="email" />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="password"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Password</FormLabel>
+                  <FormControl>
+                    <Input placeholder="shadcn" {...field} type="password" />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <span className="mt-2 block text-sm text-mainYellow underline">
+              Forgot Password
+            </span>
+          </form>
+        </Form>
+      </div>
 
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="password"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Password</FormLabel>
-                <FormControl>
-                  <Input placeholder="shadcn" {...field} type="password" />
-                </FormControl>
-
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-
-          <span className="mt-2 block text-sm text-mainYellow underline">
-            Forgot Password
-          </span>
-        </form>
-      </Form>
-      <Button type="submit" className="mt-auto w-full uppercase">
-        REGISTER
-      </Button>
-      <span className="mt-4 block text-center text-muted-foreground">
-        Don&apos;t have an account?{" "}
-        <Link href={"/signup"} className="text-mainYellow">
-          Signup
-        </Link>
-      </span>
+      {/* Fixed bottom content */}
+      <div className="pb-4">
+        <Button type="submit" className="w-full uppercase">
+          REGISTER
+        </Button>
+        <span className="mt-4 block text-center text-muted-foreground">
+          Don&apos;t have an account?{" "}
+          <Link href={"/signup"} className="text-mainYellow">
+            Signup
+          </Link>
+        </span>
+      </div>
     </div>
   );
 };

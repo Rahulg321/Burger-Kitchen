@@ -31,7 +31,7 @@ const HomePage = () => {
           Your free
         </h1>
       </div>
-      <div className="bg-gray-100 px-4 py-4">
+      <div className="bg-gray-100 px-4 pb-20 pt-8">
         <h1 className="font-bebas text-[60px] uppercase leading-[70.56px] tracking-wide">
           Burger is Free
         </h1>
@@ -57,9 +57,18 @@ const HomePage = () => {
         <div className="mt-6">
           <h4 className="uppercase">Order Now</h4>
           <div className="mt-4 flex items-center gap-4">
-            <LogoCard imgSrc={UberEatsLogo} />
-            <LogoCard imgSrc={DeliveryLogo} />
-            <LogoCard imgSrc={JustEatsLogo} />
+            <OrderNowDialog
+              VendorLogo={UberEatsLogo}
+              VendorLogoAlt={"Uber-Eats-Logo"}
+            />
+            <OrderNowDialog
+              VendorLogo={DeliveryLogo}
+              VendorLogoAlt={"Delivery-Logo"}
+            />
+            <OrderNowDialog
+              VendorLogo={JustEatsLogo}
+              VendorLogoAlt={"Just-Eats-Logo"}
+            />
           </div>
         </div>
 

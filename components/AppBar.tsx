@@ -4,7 +4,7 @@ import React from "react";
 
 const AppBar = () => {
   return (
-    <div className="flex justify-around border px-6 py-4">
+    <div className="fixed bottom-0 left-0 right-0 flex justify-around border bg-white px-6 py-4">
       <NavLogo icon={<Home />} href={`/home`} label="Home" />
       <NavLogo
         icon={<Timer />}

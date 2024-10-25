@@ -23,11 +23,17 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import ProfilePicForm from "@/components/forms/profile-pic-form";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import LogoutLogo from "@/public/logout-logo.png";
 import UberEatsLogo from "@/public/Uber-Eats-Logo.png";
 
-export default function OrderNowDialog() {
+export default function OrderNowDialog({
+  VendorLogo,
+  VendorLogoAlt,
+}: {
+  VendorLogo: StaticImageData;
+  VendorLogoAlt: string;
+}) {
   const [open, setOpen] = React.useState(false);
   const isDesktop = useMediaQuery("(min-width: 768px)");
 
@@ -51,12 +57,19 @@ export default function OrderNowDialog() {
   return (
     <Drawer open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button variant={"outline"}>Order Now</Button>
+        <div className="rounded-lg border-2 px-4 py-2">
+          <Image src={VendorLogo} alt={VendorLogoAlt} />
+        </div>
       </DialogTrigger>
       <DrawerContent>
         <DrawerHeader className="text-left">
           <DrawerTitle className="flex items-center justify-center">
-            <Image src={LogoutLogo} alt="logout-logo" width={50} height={50} />
+            <Image
+              src={LogoutLogo}
+              alt={"official logout logo"}
+              width={50}
+              height={50}
+            />
           </DrawerTitle>
           <DrawerDescription>
             <span className="block text-center text-2xl font-bold uppercase text-black">
@@ -70,8 +83,8 @@ export default function OrderNowDialog() {
         </DrawerHeader>
         <div className="mt-4 flex items-center justify-center">
           <Image
-            src={UberEatsLogo}
-            alt="uber eats logo"
+            src={VendorLogo}
+            alt={VendorLogoAlt}
             height={150}
             width={150}
           />

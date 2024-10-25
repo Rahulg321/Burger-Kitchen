@@ -108,6 +108,18 @@ figcaption {
   font-family: var(--font-poppins);
 }
 
+.font-poppins {
+  font-family: var(--font-poppins);
+}
+
+.font-bebas {
+  font-family: var(--font-bebas-neue);
+}
+
+.font-pduRegular {
+  font-family: var(--font-pdu-regular);
+}
+
 .parent-container {
   display: grid;
   min-height: 100dvh;

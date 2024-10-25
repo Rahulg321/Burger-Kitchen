@@ -57,7 +57,7 @@ export default function OrderNowDialog({
   return (
     <Drawer open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <div className="rounded-lg border-2 px-4 py-2">
+        <div className="rounded-lg border-2 p-1">
           <Image src={VendorLogo} alt={VendorLogoAlt} />
         </div>
       </DialogTrigger>

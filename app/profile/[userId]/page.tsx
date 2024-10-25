@@ -49,7 +49,7 @@ export default async function ProfilePage(props: {
             <LogoutDialog />
           </div>
           <p className="mt-auto text-center">
-            Powered by <span className="font-bold">RAVING FANS</span>
+            Crafted by <span className="font-bold">RAVING FANS</span>
           </p>
         </div>
       </section>

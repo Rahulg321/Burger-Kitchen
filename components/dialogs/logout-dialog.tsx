@@ -38,7 +38,9 @@ const LogoutDialog = () => {
             <Image src={LogoutLogo} alt="logout-logo" width={50} height={50} />
           </DialogTitle>
           <DialogDescription>
-            <h4 className="font-bold text-black">Sorry to see you go :(</h4>
+            <span className="block font-bold text-black">
+              Sorry to see you go :(
+            </span>
             <span className="text-muted-foreground">
               Are you sure you want to log out?
             </span>
@@ -54,7 +56,7 @@ const LogoutDialog = () => {
               </Button>
 
               <Button
-                className="bg-mainYellow w-full uppercase"
+                className="w-full bg-mainYellow uppercase"
                 size={"lg"}
                 onClick={() => {
                   setOpenDialog(false);

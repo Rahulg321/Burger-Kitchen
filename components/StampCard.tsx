@@ -9,16 +9,17 @@ const StampCard = () => {
     <div className="flex w-full">
       <div className="flex-1 rounded-l-xl bg-black px-2 py-6">
         <span className="font-milkshake text-sm text-white">
-          Collect 5 stamps <span className="text-mainYellow">to Win</span>
+          Collect 5 stamps{" "}
+          <span className="font-milkshake text-mainYellow">to Win</span>
         </span>
         <h4 className="uppercase text-white">
           <span className="text-mainYellow">free</span> burger
         </h4>
         <div className="flex gap-2">
-          <BurgerCircle />
-          <BurgerCircle />
-          <BurgerCircle />
-          <BurgerCircle />
+          <BurgerCircle showBurgerIcon={true} />
+          <BurgerCircle showBurgerIcon={false} />
+          <BurgerCircle showBurgerIcon={false} />
+          <BurgerCircle showBurgerIcon={false} />
         </div>
         <span className="font-brandon block uppercase text-white">
           only <span className="font-brandon text-mainYellow">4 stamps</span>{" "}

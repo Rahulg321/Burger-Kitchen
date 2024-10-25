@@ -5,7 +5,11 @@ import React from "react";
 const AppBar = () => {
   return (
     <div className="fixed bottom-0 left-0 right-0 flex justify-around border bg-white px-6 py-4">
-      <NavLogo icon={<Home />} href={`/home`} label="Home" />
+      <NavLogo
+        icon={<Home className="" fill="black" />}
+        href={`/home`}
+        label="Home"
+      />
       <NavLogo
         icon={<Timer />}
         href={`/profile/${321}/activity`}
@@ -31,7 +35,7 @@ function NavLogo({
   return (
     <Link href={href} className="flex flex-col items-center justify-center">
       {icon}
-      <span>{label}</span>
+      <span className="text-xs">{label}</span>
     </Link>
   );
 }

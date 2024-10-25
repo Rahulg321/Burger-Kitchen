@@ -102,7 +102,7 @@ const UserActivityPage = async (props: {
             />
           </div>
           <p className="mt-auto text-center">
-            Powered by <span className="font-bold">RAVING FANS</span>
+            Crafted by <span className="font-bold">RAVING FANS</span>
           </p>
         </div>
       </section>

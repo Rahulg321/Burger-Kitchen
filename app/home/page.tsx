@@ -26,18 +26,20 @@ const HomePage = () => {
             height={50}
           />
         </div>
-        <h3 className="my-4">Welcome back Raunak!!</h3>
+        <h3 className="my-4 font-normal">Welcome back Raunak!!</h3>
         <h1 className="font-bebas text-[72px] uppercase leading-[70.56px] tracking-wide text-white">
           Your free
         </h1>
       </div>
-      <div className="bg-gray-100 px-4 pb-20 pt-8">
+      <div className="bg-gray-100 px-4 pb-24 pt-2">
         <h1 className="font-bebas text-[60px] uppercase leading-[70.56px] tracking-wide">
           Burger is Free
         </h1>
 
         <div className="mt-4">
-          <h4 className="font-pduRegular uppercase">Stamp Card</h4>
+          <h4 className="font-pduRegular uppercase tracking-wide">
+            Stamp Card
+          </h4>
           <div className="mt-4">
             <Link href={"/stamp-cards"}>
               <StampCard />
@@ -46,7 +48,9 @@ const HomePage = () => {
         </div>
 
         <div className="mt-4">
-          <h4 className="uppercase">Perks & Benefits</h4>
+          <h4 className="font-pduRegular uppercase tracking-wide">
+            Perks & Benefits
+          </h4>
           <div className="scrollbar-hide mt-4 flex space-x-4 overflow-x-auto">
             <PerkBenefitCardImage />
             <PerkBenefitCardImage />
@@ -57,8 +61,8 @@ const HomePage = () => {
         </div>
 
         <div className="mt-6">
-          <h4 className="uppercase">Order Now</h4>
-          <div className="mt-4 flex items-center gap-4">
+          <h4 className="font-pduRegular uppercase tracking-wide">Order Now</h4>
+          <div className="mt-4 flex w-full items-center justify-between">
             <OrderNowDialog
               VendorLogo={UberEatsLogo}
               VendorLogoAlt={"Uber-Eats-Logo"}
@@ -75,7 +79,7 @@ const HomePage = () => {
         </div>
 
         <span className="mt-6 block text-center text-sm">
-          Powered by <span className="font-bold">RAVING FANS</span>
+          Crafted by <span className="font-bold">RAVING FANS</span>
         </span>
       </div>
       <AppBar />

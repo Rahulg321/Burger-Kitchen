@@ -39,7 +39,9 @@ const HomePage = () => {
         <div className="mt-4">
           <h4 className="font-pduRegular uppercase">Stamp Card</h4>
           <div className="mt-4">
-            <StampCard />
+            <Link href={"/stamp-cards"}>
+              <StampCard />
+            </Link>
           </div>
         </div>
 

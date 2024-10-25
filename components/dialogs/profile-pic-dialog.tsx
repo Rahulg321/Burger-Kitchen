@@ -34,7 +34,7 @@ export default function ProfilePicDialog() {
     return (
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogTrigger asChild>
-          <div className="bg-mainYellow w-fit rounded-full">
+          <div className="w-fit rounded-full bg-mainYellow">
             <Image
               src="/profilePlaceholder.png"
               alt="Profile user Placeholder"
@@ -57,7 +57,7 @@ export default function ProfilePicDialog() {
   return (
     <Drawer open={open} onOpenChange={setOpen}>
       <DrawerTrigger asChild>
-        <div className="bg-mainYellow w-fit rounded-full">
+        <div className="w-fit rounded-full bg-mainYellow">
           <Image
             src="/profilePlaceholder.png"
             alt="Profile user Placeholder"
@@ -72,9 +72,9 @@ export default function ProfilePicDialog() {
             <Image src={LogoutLogo} alt="logout-logo" width={50} height={50} />
           </DrawerTitle>
           <DrawerDescription>
-            <h4 className="font-bold uppercase text-black">
+            <span className="block font-bold uppercase text-black">
               change profile photo
-            </h4>
+            </span>
             <span className="text-muted-foreground">
               Would you like to take a new photo or choose an existing one?
             </span>

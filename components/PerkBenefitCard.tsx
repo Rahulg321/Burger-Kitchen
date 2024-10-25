@@ -4,7 +4,7 @@ import BurgerStamp from "@/public/burger-stamp.jpeg";
 import { CiBurger } from "react-icons/ci";
 import BurgerCircle from "./BurgerCircle";
 
-const StampCard = () => {
+const PerkBenefitCard = () => {
   return (
     <div className="flex w-full">
       <div className="flex-1 rounded-l-xl bg-black px-2 py-6">
@@ -38,4 +38,4 @@ const StampCard = () => {
   );
 };
 
-export default StampCard;
+export default PerkBenefitCard;

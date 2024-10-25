@@ -79,8 +79,8 @@ const LoginForm = () => {
 
       {/* Fixed bottom content */}
       <div className="pb-4">
-        <Button type="submit" className="w-full uppercase">
-          REGISTER
+        <Button type="submit" className="font-pduRegular w-full uppercase">
+          Log in
         </Button>
         <span className="mt-4 block text-center text-muted-foreground">
           Don&apos;t have an account?{" "}

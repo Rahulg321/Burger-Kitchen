@@ -70,7 +70,7 @@
   }
 
   h1 {
-    @apply scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl;
+    @apply scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-6xl;
   }
 
   h2 {
@@ -118,6 +118,14 @@ figcaption {
 
 .font-pduRegular {
   font-family: var(--font-pdu-regular);
+}
+
+.font-brandon {
+  font-family: var(--font-brandon);
+}
+
+.font-milkshake {
+  font-family: var(--font-milkshake);
 }
 
 .parent-container {

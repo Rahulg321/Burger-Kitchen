@@ -12,9 +12,11 @@ export default async function ProfilePage(props: {
   return (
     <React.Fragment>
       <section className="block-space big-container">
-        <div className="flex items-center">
+        <div className="relative mb-4 flex w-full items-center">
           <PreviousPageButton />
-          <h2 className="ml-4 uppercase">My Profile</h2>
+          <h3 className="font-pduRegular absolute inset-0 mx-auto text-center font-semibold uppercase tracking-wide">
+            My Profile
+          </h3>
         </div>
         <div className="my-8 flex flex-col items-center">
           <ProfilePicDialog />

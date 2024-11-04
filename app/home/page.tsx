@@ -33,7 +33,7 @@ const HomePage = () => {
       </div>
       <div className="bg-gray-100 px-4 pb-24 pt-2">
         <h1 className="font-bebas text-[60px] uppercase leading-[70.56px] tracking-wide">
-          Burger is Free
+          Burger is here
         </h1>
 
         <div className="mt-4">

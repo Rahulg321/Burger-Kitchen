@@ -16,9 +16,9 @@ const UserActivityPage = async (props: {
       <section className="big-container block-space flex min-h-screen flex-col justify-between">
         <div>
           <div className="sticky top-0 z-10 bg-white py-4">
-            <div className="mb-6 flex items-center gap-4">
+            <div className="relative mb-4 flex w-full items-center">
               <PreviousPageButton />
-              <h3 className="font-pduRegular font-semibold uppercase tracking-wide">
+              <h3 className="font-pduRegular absolute inset-0 mx-auto text-center font-semibold uppercase tracking-wide">
                 My Activity
               </h3>
             </div>

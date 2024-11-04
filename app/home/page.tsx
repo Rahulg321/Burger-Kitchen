@@ -8,6 +8,7 @@ import DeliveryLogo from "@/public/deliveroo-logo.png";
 import JustEatsLogo from "@/public/just-eat.png";
 import OrderNowDialog from "@/components/dialogs/order-now-dialog";
 import Link from "next/link";
+import FreeChipsDialog from "@/components/dialogs/free-chip-dialog";
 
 export const metadata = {
   title: "Home Page",
@@ -17,6 +18,7 @@ export const metadata = {
 const HomePage = () => {
   return (
     <section className="">
+      <FreeChipsDialog />
       <div className="bg-mainYellow px-4 pt-10">
         <div className="flex items-center justify-center">
           <Image

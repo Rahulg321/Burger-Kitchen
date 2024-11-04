@@ -26,6 +26,19 @@ import Link from "next/link";
 import { Checkbox } from "../ui/checkbox";
 import Image from "next/image";
 import BirthdayVector from "@/public/tooltip-birthday-vector.png";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import Stars from "@/public/mdi_stars.png";
+import { FaGoogle } from "react-icons/fa6";
+import { BsApple } from "react-icons/bs";
+import { FaFacebook } from "react-icons/fa";
+import { IconType } from "react-icons/lib";
+import { Icon } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { FcGoogle } from "react-icons/fc";
 
 const formSchema = z
   .object({
@@ -48,6 +61,7 @@ const formSchema = z
   });
 
 const SignUpForm = () => {
+  const router = useRouter();
   const [date, setDate] = React.useState<Date | undefined>(new Date());
   const [isPending, startTransition] = useTransition();
 
@@ -78,7 +92,6 @@ const SignUpForm = () => {
               name="firstName"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>First Name</FormLabel>
                   <FormControl>
                     <Input placeholder="First Name" {...field} />
                   </FormControl>
@@ -92,7 +105,6 @@ const SignUpForm = () => {
               name="lastName"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Last Name</FormLabel>
                   <FormControl>
                     <Input placeholder="Last Name" {...field} />
                   </FormControl>
@@ -108,7 +120,6 @@ const SignUpForm = () => {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email</FormLabel>
                   <FormControl>
                     <Input
                       placeholder="Email Address"
@@ -126,7 +137,6 @@ const SignUpForm = () => {
               name="birthday"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Birthday</FormLabel>
                   <FormControl>
                     <Input
                       placeholder="Select your birthday"
@@ -141,24 +151,7 @@ const SignUpForm = () => {
             />
           </div>
 
-          <TooltipProvider>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <div className="flex items-center gap-2">
-                  <Image src={BirthdayVector} alt="birthday icon vector" />
-                  <span className="text-sm text-muted-foreground">
-                    Birthday Reward
-                  </span>
-                </div>
-              </TooltipTrigger>
-              <TooltipContent className="bg-mainYellow text-black">
-                <p className="text-sm">
-                  Get a special surprise on your birthday from GBK. Enter your
-                  date of birth to earn your reward.
-                </p>
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
+          <BirthdayRewardPopover />
 
           <div className="mt-12 space-y-4">
             <div className="items-top flex space-x-2">
@@ -192,20 +185,66 @@ const SignUpForm = () => {
           </span>
           <Button
             type="submit"
-            className="font-pduRegular mt-4 w-full uppercase"
+            className="mt-4 w-full px-6 py-8 uppercase"
+            onClick={() => {
+              router.push("/check-email");
+            }}
+            asChild
           >
-            REGISTER
+            <div className="relative flex justify-between">
+              <div>
+                <Image src={Stars} alt="Stars" />
+              </div>
+              <div className="absolute inset-0 mx-auto flex flex-col items-center justify-center text-center">
+                <span className="font-pduRegular text-lg">REGISTER</span>
+                <span className="text-xs text-muted-foreground">
+                  no password needed
+                </span>
+              </div>
+            </div>
           </Button>
         </form>
       </Form>
-      <span className="mt-4 block text-center text-sm text-muted-foreground">
-        Already have an account?{" "}
-        <Link href={"/login"} className="text-mainYellow">
-          Login
-        </Link>
-      </span>
+      <div>
+        <div className="mt-6 flex items-center justify-center">
+          <span className="flex-1 border-t border-gray-300"></span>
+          <span className="px-4 text-sm font-bold">Or Continue With</span>
+          <span className="flex-1 border-t border-gray-300"></span>
+        </div>
+
+        <div className="mt-4 flex justify-around">
+          <SocialMediaLink icon={FaGoogle} />
+          <SocialMediaLink icon={BsApple} />
+          <SocialMediaLink icon={FaFacebook} />
+        </div>
+      </div>
     </div>
   );
 };
 
 export default SignUpForm;
+
+function BirthdayRewardPopover() {
+  return (
+    <Popover>
+      <PopoverTrigger asChild>
+        <div className="flex items-center gap-2">
+          <Image src={BirthdayVector} alt="birthday icon vector" />
+          <span className="text-sm text-muted-foreground">Birthday Reward</span>
+        </div>
+      </PopoverTrigger>
+      <PopoverContent className="bg-mainYellow text-black">
+        Get a special surprise on your birthday from GBK. Enter your date of
+        birth to earn your reward.
+      </PopoverContent>
+    </Popover>
+  );
+}
+
+function SocialMediaLink({ icon: Icon }: { icon: IconType }) {
+  return (
+    <div className="text-4xl text-black">
+      <Icon />
+    </div>
+  );
+}

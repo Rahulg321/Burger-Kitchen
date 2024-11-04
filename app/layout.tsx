@@ -33,7 +33,9 @@ export default function RootLayout({
       lang="en"
       className={` ${bebas_neue.variable} ${pduRegular.variable} ${brandon.variable} ${milkShake.variable} ${poppins.variable}`}
     >
-      <body className={`antialiased`}>{children}</body>
+      <body className={`antialiased`}>
+        <main className="">{children}</main>
+      </body>
     </html>
   );
 }

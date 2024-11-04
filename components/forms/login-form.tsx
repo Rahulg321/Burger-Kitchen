@@ -15,12 +15,10 @@ import {
 import { Input } from "@/components/ui/input";
 import React, { useTransition } from "react";
 import Link from "next/link";
+import { FcGoogle } from "react-icons/fc";
 
 const formSchema = z.object({
   email: z.string().email({ message: "Invalid email address" }),
-  password: z
-    .string()
-    .min(6, { message: "Password must be at least 6 characters" }),
 });
 
 const LoginForm = () => {
@@ -30,7 +28,6 @@ const LoginForm = () => {
     resolver: zodResolver(formSchema),
     defaultValues: {
       email: "",
-      password: "",
     },
   });
 
@@ -39,9 +36,9 @@ const LoginForm = () => {
   }
 
   return (
-    <div className="flex min-h-[80dvh] flex-col justify-between px-4">
+    <div className="px-4">
       {/* Scrollable form content */}
-      <div className="flex flex-col justify-center overflow-y-auto">
+      <div className="">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
             <FormField
@@ -49,7 +46,6 @@ const LoginForm = () => {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email</FormLabel>
                   <FormControl>
                     <Input placeholder="shadcn" {...field} type="email" />
                   </FormControl>
@@ -57,37 +53,8 @@ const LoginForm = () => {
                 </FormItem>
               )}
             />
-            <FormField
-              control={form.control}
-              name="password"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Password</FormLabel>
-                  <FormControl>
-                    <Input placeholder="shadcn" {...field} type="password" />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <span className="mt-2 block text-sm text-mainYellow underline">
-              Forgot Password
-            </span>
           </form>
         </Form>
-      </div>
-
-      {/* Fixed bottom content */}
-      <div className="pb-4">
-        <Button type="submit" className="font-pduRegular w-full uppercase">
-          Log in
-        </Button>
-        <span className="mt-4 block text-center text-muted-foreground">
-          Don&apos;t have an account?{" "}
-          <Link href={"/signup"} className="text-mainYellow">
-            Signup
-          </Link>
-        </span>
       </div>
     </div>
   );

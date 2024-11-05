@@ -29,12 +29,12 @@ const HomePage = () => {
           />
         </div>
         <h3 className="my-4 font-normal">Welcome back Raunak!!</h3>
-        <h1 className="font-bebas text-[72px] uppercase leading-[70.56px] tracking-wide text-white">
+        <h1 className="font-bebas text-[4rem] uppercase leading-[70.56px] tracking-wide text-white">
           Your free
         </h1>
       </div>
       <div className="bg-gray-100 px-4 pb-24 pt-2">
-        <h1 className="font-bebas text-[60px] uppercase leading-[70.56px] tracking-wide">
+        <h1 className="font-bebas text-[4rem] uppercase leading-[70.56px] tracking-wide">
           Burger is here
         </h1>
 
@@ -42,10 +42,17 @@ const HomePage = () => {
           <h4 className="font-pduRegular uppercase tracking-wide">
             Stamp Card
           </h4>
-          <div className="mt-4">
-            <Link href={"/stamp-cards"}>
-              <StampCard />
-            </Link>
+          <div className="mt-4 space-y-4">
+            <div>
+              <Link href={"/stamp-cards"}>
+                <StampCard />
+              </Link>
+            </div>
+            <div>
+              <Link href={"/stamp-cards"}>
+                <StampCard />
+              </Link>
+            </div>
           </div>
         </div>
 

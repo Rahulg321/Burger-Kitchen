@@ -139,8 +139,9 @@ const SignUpForm = () => {
                 <FormItem>
                   <FormControl>
                     <Input
-                      placeholder="Select your birthday"
                       {...field}
+                      placeholder="Select your birthday"
+                      className="cursor-pointer"
                       type="date"
                     />
                   </FormControl>
@@ -155,7 +156,7 @@ const SignUpForm = () => {
 
           <div className="mt-12 space-y-4">
             <div className="items-top flex space-x-2">
-              <Checkbox id="terms1" />
+              <Checkbox id="terms1" checked />
               <div className="grid gap-1.5 leading-none">
                 <label
                   htmlFor="terms1"
@@ -167,7 +168,7 @@ const SignUpForm = () => {
             </div>
 
             <div className="items-top flex space-x-2">
-              <Checkbox id="terms1" />
+              <Checkbox id="terms1" checked />
               <div className="grid gap-1.5 leading-none">
                 <label
                   htmlFor="terms1"

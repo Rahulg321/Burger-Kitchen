@@ -7,32 +7,34 @@ import BurgerCircle from "./BurgerCircle";
 const StampCard = () => {
   return (
     <div className="flex w-full">
-      <div className="flex-1 rounded-l-xl bg-black px-2 py-6">
+      <div className="basis-1/2 rounded-l-xl bg-black px-2 py-6">
         <span className="font-milkshake text-sm text-white">
           Collect 5 stamps{" "}
           <span className="font-milkshake text-mainYellow">to Win</span>
         </span>
-        <h4 className="uppercase text-white">
+        <h4 className="text-[2rem] uppercase text-white">
           <span className="text-mainYellow">free</span> burger
         </h4>
         <div className="flex gap-2">
           <BurgerCircle showBurgerIcon={true} />
-          <BurgerCircle showBurgerIcon={false} />
+          <BurgerCircle showBurgerIcon={true} />
           <BurgerCircle showBurgerIcon={false} />
           <BurgerCircle showBurgerIcon={false} />
         </div>
-        <span className="font-brandon block uppercase text-white">
+        <span className="font-brandon block text-[0.75rem] uppercase text-white">
           only <span className="font-brandon text-mainYellow">4 stamps</span>{" "}
           left!
         </span>
-        <span className="mt-4 block text-sm text-white">*T&C Applied</span>
+        <span className="mt-4 block text-[0.5rem] text-white">
+          *T&C Applied
+        </span>
       </div>
-      <div className="relative flex-1">
+      <div className="relative basis-1/2">
         <Image
           src={BurgerStamp}
           alt={"diamond-logo"}
           fill
-          className="h-full rounded-r-xl object-cover"
+          className="object-fit h-full rounded-r-xl"
         />
       </div>
     </div>

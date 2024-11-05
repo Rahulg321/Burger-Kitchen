@@ -33,7 +33,7 @@ const HomePage = () => {
           Your free
         </h1>
       </div>
-      <div className="bg-gray-100 px-4 pb-24 pt-2">
+      <div className="bg-gray-100 px-2 pb-24 pt-2">
         <h1 className="font-bebas text-[4rem] uppercase leading-[70.56px] tracking-wide">
           Burger is here
         </h1>

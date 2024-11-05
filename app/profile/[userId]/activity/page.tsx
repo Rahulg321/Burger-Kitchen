@@ -126,9 +126,9 @@ function ActivityCard({
       <div>
         <Image src={img} alt="Vector" />
       </div>
-      <div className="ml-2">
-        <h4>{heading}</h4>
-        <span>{tagline}</span>
+      <div className="ml-4">
+        <h5 className="font-semibold">{heading}</h5>
+        <span className="text-sm">{tagline}</span>
       </div>
     </div>
   );

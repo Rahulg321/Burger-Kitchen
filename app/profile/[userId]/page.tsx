@@ -20,8 +20,8 @@ export default async function ProfilePage(props: {
         </div>
         <div className="my-8 flex flex-col items-center">
           <ProfilePicDialog />
-          <h3>RAUNAK DAS</h3>
-          <span>test@gmail.com</span>
+          <h4>RAUNAK DAS</h4>
+          <span className="text-sm">test@gmail.com</span>
         </div>
 
         <div className="space-y-4">
@@ -69,9 +69,9 @@ function ProfileLinkComponent({
   return (
     <Link
       href={href}
-      className="block w-full rounded-lg border bg-mainYellow px-2 py-4 text-center"
+      className="block w-full rounded-lg border bg-mainYellow p-2 text-center"
     >
-      {content}
+      <span className="text-xs">{content}</span>
     </Link>
   );
 }

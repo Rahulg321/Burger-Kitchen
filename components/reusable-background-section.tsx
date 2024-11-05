@@ -13,7 +13,7 @@ const ReusableBackgroundSection = ({
 }) => {
   return (
     <section
-      className={cn("group relative min-h-screen overflow-hidden bg-black")}
+      className={cn("group relative min-h-[100dvh] overflow-hidden bg-black")}
     >
       <div
         className={cn("absolute bottom-0 left-0 right-0 top-0 z-10", classname)}

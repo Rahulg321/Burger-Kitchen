@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import React from "react";
 
-export default function Home() {
+export default async function Home() {
   return (
     <React.Fragment>
       <ReusableBackgroundSection
@@ -23,7 +23,7 @@ export default function Home() {
           <Link href={"/signup"}>Get Started</Link>
         </Button>
 
-        <p className="mx-auto mt-auto text-center text-sm text-white">
+        <p className="mx-auto mb-4 mt-auto text-center text-sm text-white">
           Crafted by <span className="font-bold">RAVING FANS</span>
         </p>
       </ReusableBackgroundSection>

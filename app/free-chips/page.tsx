@@ -3,7 +3,6 @@ import Image from "next/image";
 import React from "react";
 import QrCode from "@/public/qr-code.jpeg";
 import { Button } from "@/components/ui/button";
-
 import YellowLays from "@/public/yellow-lays.png";
 
 const FreeChipsPage = async () => {

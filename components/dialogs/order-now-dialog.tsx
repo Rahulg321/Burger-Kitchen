@@ -57,19 +57,15 @@ export default function OrderNowDialog({
   return (
     <Drawer open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <div className="rounded-lg border-2 p-1">
-          <Image
-            src={VendorLogo}
-            alt={VendorLogoAlt}
-            className="object-cover"
-          />
+        <div className="rounded-lg border-2">
+          <Image src={VendorLogo} alt={VendorLogoAlt} className="" />
         </div>
       </DialogTrigger>
       <DrawerContent>
         <DrawerHeader className="text-left">
           <DrawerTitle className="flex items-center justify-center">
             <Image
-              src={LogoutLogo}
+              src={"/logos/GBK-diamond.jpg"}
               alt={"official logout logo"}
               width={50}
               height={50}
@@ -79,7 +75,7 @@ export default function OrderNowDialog({
             <span className="block text-center text-2xl font-bold uppercase text-black">
               order now
             </span>
-            <span className="text-muted-foreground">
+            <span className="mt-2 block text-center text-muted-foreground">
               Finish your order and enjoy tasty rewards. Hungry now? You’re just
               one click away from satisfaction!
             </span>

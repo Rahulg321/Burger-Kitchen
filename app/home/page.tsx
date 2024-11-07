@@ -9,6 +9,7 @@ import JustEatsLogo from "@/public/just-eat.png";
 import OrderNowDialog from "@/components/dialogs/order-now-dialog";
 import Link from "next/link";
 import FreeChipsDialog from "@/components/dialogs/free-chip-dialog";
+import GBKLogo from "@/public//logos/GBK-Logo.png";
 
 export const metadata = {
   title: "Home Page",
@@ -22,7 +23,7 @@ const HomePage = () => {
       <div className="bg-mainYellow px-4 pt-10">
         <div className="flex items-center justify-center">
           <Image
-            src={"/diamond-logo.png"}
+            src={"/logos/GBK-Logo.png"}
             alt="diamond-logo"
             width={50}
             height={50}

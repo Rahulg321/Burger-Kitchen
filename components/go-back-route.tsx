@@ -4,6 +4,8 @@ import { ArrowLeft, MoveLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
 import React from "react";
 import { Button } from "./ui/button";
+import { FaArrowLeft } from "react-icons/fa6";
+import { FaArrowLeftLong } from "react-icons/fa6";
 
 const PreviousPageButton = () => {
   const router = useRouter();
@@ -16,7 +18,7 @@ const PreviousPageButton = () => {
       }}
       className=""
     >
-      <ArrowLeft className="h-12 w-12" />
+      <FaArrowLeftLong className="" />
     </Button>
   );
 };

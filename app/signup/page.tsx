@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: "Sign up to Burger Kitchen",
 };
 
-const SignUpPage = () => {
+const SignUpPage = async () => {
   return (
     <section className="block-space big-container">
       <div className="relative mb-4 flex w-full items-center">

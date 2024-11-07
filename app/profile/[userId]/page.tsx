@@ -26,23 +26,23 @@ export default async function ProfilePage(props: {
 
         <div className="space-y-4">
           <ProfileLinkComponent
-            href={`/profile/${12312}/details`}
+            href={`/profile/${12312}/activity`}
             content="My Details"
           />
           <ProfileLinkComponent
-            href={`/profile/${12312}/details`}
+            href={`/profile/${12312}/activity`}
             content="Market Reference"
           />
           <ProfileLinkComponent
-            href={`/profile/${12312}/details`}
+            href={`/profile/${12312}/activity`}
             content="Personal Code"
           />
           <ProfileLinkComponent
-            href={`/profile/${12312}/details`}
+            href={`/profile/${12312}/activity`}
             content="Referral Code"
           />
           <ProfileLinkComponent
-            href={`/profile/${12312}/details`}
+            href={`/profile/${12312}/activity`}
             content="Know more about Raving Fans"
           />
         </div>

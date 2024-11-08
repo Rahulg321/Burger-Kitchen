@@ -57,8 +57,12 @@ export default function OrderNowDialog({
   return (
     <Drawer open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <div className="rounded-lg border-2">
-          <Image src={VendorLogo} alt={VendorLogoAlt} className="" />
+        <div className="rounded-lg border-2 p-1">
+          <Image
+            src={VendorLogo}
+            alt={VendorLogoAlt}
+            className="object-cover"
+          />
         </div>
       </DialogTrigger>
       <DrawerContent>

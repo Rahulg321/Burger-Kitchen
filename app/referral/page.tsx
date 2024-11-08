@@ -7,13 +7,21 @@ import QrCode from "@/public/qr-code.jpeg";
 const ReferralPage = () => {
   return (
     <section className="block-space big-container">
-      <div className="flex items-center">
+      <div className="relative mb-4 flex w-full items-center">
         <PreviousPageButton />
-        <h2 className="ml-4 uppercase">Referral Code</h2>
+        <h3 className="font-pduRegular absolute inset-0 mx-auto text-center font-semibold uppercase tracking-wide">
+          Referral Code
+        </h3>
       </div>
 
-      <div className="my-6 px-4">
-        <Image src={QrCode} alt="qr code" height={300} width={300} />
+      <div className="my-6">
+        <Image
+          src={QrCode}
+          alt="qr code"
+          height={200}
+          width={200}
+          className="mx-auto"
+        />
       </div>
       <div className="my-4">
         <h3 className="uppercase">get flat 10% discount!</h3>
@@ -46,7 +54,7 @@ const ReferralPage = () => {
         By continuing, you accept the Terms & Conditions.
       </span>
 
-      <Button className="bg-mainYellow mt-4 w-full">Share</Button>
+      <Button className="mt-4 w-full bg-mainYellow">Share</Button>
       <p className="mt-auto text-center">
         Powered by <span className="font-bold">RAVING FANS</span>
       </p>

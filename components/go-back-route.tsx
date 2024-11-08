@@ -16,7 +16,7 @@ const PreviousPageButton = () => {
       onClick={() => {
         router.back();
       }}
-      className=""
+      className="z-50"
     >
       <FaArrowLeftLong className="" />
     </Button>

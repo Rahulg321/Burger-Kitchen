@@ -9,13 +9,11 @@ import StampFreeBurger from "@/public/stamp-free-burger.png";
 const StampCardsPage = () => {
   return (
     <section className="big-container block-space flex min-h-screen flex-col justify-between">
-      <div className="">
-        <div className="mb-6 flex items-center gap-4">
-          <PreviousPageButton />
-          <h3 className="font-pduRegular font-semibold uppercase tracking-wide">
-            Stamp Card
-          </h3>
-        </div>
+      <div className="relative mb-4 flex w-full items-center">
+        <PreviousPageButton />
+        <h3 className="font-pduRegular absolute inset-0 mx-auto text-center font-semibold uppercase tracking-wide">
+          Stamp Card
+        </h3>
       </div>
 
       <div className="mx-auto">
@@ -38,25 +36,25 @@ const StampCardsPage = () => {
       </div>
 
       <div className="mt-2 flex items-end justify-between">
-        <div className="flex flex-col justify-center">
+        <div className="flex flex-col items-center justify-center">
           <Image src={StampBurgerFilled} alt="" />
-          <span className="text-sm font-semibold">Level 1</span>
+          <span className="text-xs font-semibold">Level 1</span>
         </div>
-        <div className="flex flex-col justify-center">
+        <div className="flex flex-col items-center justify-center">
           <Image src={StampBurgerFilled} alt="" />
-          <span className="text-sm font-semibold">Level 2</span>
+          <span className="text-xs font-semibold">Level 2</span>
         </div>
-        <div className="flex flex-col justify-center">
+        <div className="flex flex-col items-center justify-center">
           <Image src={StampBurgerFilled} alt="" />
-          <span className="text-sm font-semibold">Level 3</span>
+          <span className="text-xs font-semibold">Level 3</span>
         </div>
-        <div className="flex flex-col justify-center">
+        <div className="flex flex-col items-center justify-center">
           <Image src={StampBurgerGrey} alt="" />
-          <span className="text-sm font-semibold">Level 4</span>
+          <span className="text-xs font-semibold">Level 4</span>
         </div>
-        <div className="flex flex-col justify-center">
+        <div className="flex flex-col items-center justify-center">
           <Image src={StampFreeBurger} alt="" />
-          <span className="text-sm font-semibold">Free Burger!</span>
+          <span className="text-xs font-semibold">Free Burger!</span>
         </div>
       </div>
 

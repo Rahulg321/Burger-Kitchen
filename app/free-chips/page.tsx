@@ -14,8 +14,14 @@ const FreeChipsPage = async () => {
           Free Chips
         </h3>
       </div>
-      <div className="my-6 px-4">
-        <Image src={QrCode} alt="qr code" height={300} width={300} />
+      <div className="my-6">
+        <Image
+          src={QrCode}
+          alt="qr code"
+          height={200}
+          width={200}
+          className="mx-auto"
+        />
       </div>
       <div className="my-4">
         <h4 className="font-pduRegular uppercase tracking-wider">

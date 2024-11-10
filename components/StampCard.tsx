@@ -17,7 +17,8 @@ const StampCard = () => {
         </h4>
         <div className="flex gap-2">
           <BurgerCircle showBurgerIcon={true} />
-          <BurgerCircle showBurgerIcon={true} />
+          <BurgerCircle showBurgerIcon={false} />
+          <BurgerCircle showBurgerIcon={false} />
           <BurgerCircle showBurgerIcon={false} />
           <BurgerCircle showBurgerIcon={false} />
         </div>

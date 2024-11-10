@@ -51,16 +51,7 @@ const FreeChipsPage = async () => {
       <span className="text-sm text-muted-foreground">
         By continuing, you accept the Terms & Conditions.
       </span>
-      <div className="relative h-[200px] overflow-hidden">
-        <Image
-          src={YellowLays}
-          alt="top half of yellow lays packet"
-          fill
-          objectFit="cover"
-          objectPosition="top"
-          className="absolute top-0"
-        />
-      </div>
+
       <div className="mt-auto">
         <span className="mt-2 block text-center">
           Powered by <span className="font-bold">RAVING FANS</span>

@@ -20,8 +20,8 @@ const StampCardsPage = () => {
         <Image
           src={QrCode}
           alt="image of a qrcode"
-          height={250}
-          width={250}
+          height={200}
+          width={200}
           className=""
         />
       </div>

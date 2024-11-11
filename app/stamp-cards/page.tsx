@@ -4,7 +4,7 @@ import React from "react";
 import QrCode from "@/public/qr-code.jpeg";
 import StampBurgerFilled from "@/public/stamp-burger-filled.png";
 import StampBurgerGrey from "@/public/stamp-burger-grey.png";
-import StampFreeBurger from "@/public/stamp-free-burger.png";
+import StampFreeBurger from "@/public/hd/burger.png";
 
 const StampCardsPage = () => {
   return (
@@ -37,23 +37,25 @@ const StampCardsPage = () => {
 
       <div className="mt-2 flex items-end justify-between">
         <div className="flex flex-col items-center justify-center">
-          <Image src={StampBurgerFilled} alt="" />
+          <Image src={StampBurgerFilled} alt="" width={50} height={50} />
           <span className="text-xs font-semibold">Level 1</span>
         </div>
         <div className="flex flex-col items-center justify-center">
-          <Image src={StampBurgerFilled} alt="" />
+          <Image src={StampBurgerFilled} alt="" width={50} height={50} />
           <span className="text-xs font-semibold">Level 2</span>
         </div>
         <div className="flex flex-col items-center justify-center">
-          <Image src={StampBurgerFilled} alt="" />
+          <Image src={StampBurgerFilled} alt="" width={50} height={50} />
           <span className="text-xs font-semibold">Level 3</span>
         </div>
+
         <div className="flex flex-col items-center justify-center">
-          <Image src={StampBurgerGrey} alt="" />
-          <span className="text-xs font-semibold">Level 4</span>
+          <Image src={StampBurgerFilled} alt="" width={50} height={50} />
+          <span className="text-xs font-semibold">Level 3</span>
         </div>
+
         <div className="flex flex-col items-center justify-center">
-          <Image src={StampFreeBurger} alt="" />
+          <Image src={StampFreeBurger} alt="" width={60} height={60} />
           <span className="text-xs font-semibold">Free Burger!</span>
         </div>
       </div>

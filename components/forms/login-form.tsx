@@ -15,7 +15,6 @@ import {
 import { Input } from "@/components/ui/input";
 import React, { useTransition } from "react";
 import Link from "next/link";
-import { FcGoogle } from "react-icons/fc";
 
 const formSchema = z.object({
   email: z.string().email({ message: "Invalid email address" }),

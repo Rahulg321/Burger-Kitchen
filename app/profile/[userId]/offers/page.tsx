@@ -1,6 +1,6 @@
 import PreviousPageButton from "@/components/go-back-route";
 import React from "react";
-import BurgerOffer from "@/public/burger-offer.png";
+import BurgerOffer from "@/public/hd/burger.png";
 import Image from "next/image";
 
 const OffersPage = async () => {

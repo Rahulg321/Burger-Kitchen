@@ -3,6 +3,7 @@
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { format } from "date-fns";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -36,15 +37,20 @@ import { FaGoogle } from "react-icons/fa6";
 import { BsApple } from "react-icons/bs";
 import { FaFacebook } from "react-icons/fa";
 import { IconType } from "react-icons/lib";
-import { Icon } from "lucide-react";
+import { Calendar1, CalendarIcon, Icon } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { FcGoogle } from "react-icons/fc";
+import SocialMediaLink from "../SocialMediaLink";
+import { cn } from "@/lib/utils";
 
 const formSchema = z
   .object({
     firstName: z.string().min(1, { message: "First name is required" }).max(50),
     lastName: z.string().min(1, { message: "Last name is required" }).max(50),
     email: z.string().email({ message: "Invalid email address" }),
+    dob: z.date({
+      required_error: "A date of birth is required.",
+    }),
     password: z
       .string()
       .min(6, { message: "Password must be at least 6 characters" }),
@@ -134,18 +140,43 @@ const SignUpForm = () => {
             />
             <FormField
               control={form.control}
-              name="birthday"
+              name="dob"
               render={({ field }) => (
-                <FormItem>
-                  <FormControl>
-                    <Input
-                      {...field}
-                      placeholder="Select your birthday"
-                      className="cursor-pointer"
-                      type="date"
-                    />
-                  </FormControl>
-
+                <FormItem className="flex w-full flex-col">
+                  <Popover>
+                    <PopoverTrigger asChild>
+                      <FormControl>
+                        <Button
+                          variant={"outline"}
+                          className={cn(
+                            "w-[240px] w-full pl-3 text-left font-normal",
+                            !field.value && "text-muted-foreground",
+                          )}
+                        >
+                          {field.value ? (
+                            format(field.value, "PPP")
+                          ) : (
+                            <span>Date of Birth</span>
+                          )}
+                          <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                        </Button>
+                      </FormControl>
+                    </PopoverTrigger>
+                    <PopoverContent className="w-auto p-0" align="start">
+                      <Calendar
+                        mode="single"
+                        selected={field.value}
+                        onSelect={field.onChange}
+                        disabled={(date) =>
+                          date > new Date() || date < new Date("1900-01-01")
+                        }
+                        initialFocus
+                      />
+                    </PopoverContent>
+                  </Popover>
+                  <FormDescription>
+                    Your date of birth is used to calculate your age.
+                  </FormDescription>
                   <FormMessage />
                 </FormItem>
               )}
@@ -239,13 +270,5 @@ function BirthdayRewardPopover() {
         birth to earn your reward.
       </PopoverContent>
     </Popover>
-  );
-}
-
-function SocialMediaLink({ icon: Icon }: { icon: IconType }) {
-  return (
-    <div className="text-4xl text-black">
-      <Icon />
-    </div>
   );
 }

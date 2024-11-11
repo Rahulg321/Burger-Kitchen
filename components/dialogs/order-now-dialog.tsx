@@ -61,6 +61,8 @@ export default function OrderNowDialog({
           <Image
             src={VendorLogo}
             alt={VendorLogoAlt}
+            width={100}
+            height={100}
             className="object-cover"
           />
         </div>

@@ -2,10 +2,10 @@ import AppBar from "@/components/AppBar";
 import StampCard from "@/components/StampCard";
 import Image, { StaticImageData } from "next/image";
 import React from "react";
-import OfferTemplate from "@/public/offer-template.png";
-import UberEatsLogo from "@/public/Uber-Eats-Logo.png";
-import DeliveryLogo from "@/public/deliveroo-logo.png";
-import JustEatsLogo from "@/public/just-eat.png";
+import OfferTemplate from "@/public/hd/offer-template.png";
+import UberEatsLogo from "@/public/hd/Uber-Eats-Logo.png";
+import DeliveryLogo from "@/public/hd/deliveroo-logo.png";
+import JustEatsLogo from "@/public/hd/just-eat-logo.png";
 import OrderNowDialog from "@/components/dialogs/order-now-dialog";
 import Link from "next/link";
 import FreeChipsDialog from "@/components/dialogs/free-chip-dialog";
@@ -106,11 +106,7 @@ const PerkBenefitCardImage = () => {
   return (
     <div className="relative h-44 w-full flex-shrink-0 overflow-hidden rounded-lg">
       <Link href={"/profile/321/offers"}>
-        <Image
-          src={OfferTemplate}
-          alt="offer-template"
-          layout="fill" // Makes the image fill the container
-        />
+        <Image src={OfferTemplate} alt="offer-template" fill />
       </Link>
     </div>
   );

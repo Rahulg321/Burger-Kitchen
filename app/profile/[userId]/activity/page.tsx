@@ -1,9 +1,9 @@
 import PreviousPageButton from "@/components/go-back-route";
 import { Percent } from "lucide-react";
 import React from "react";
-import Vector from "@/public/activity/Vector.png";
-import BurgerIcon from "@/public/activity/burgerYellowIcon.png";
-import CakeIcon from "@/public/activity/cakeIcon.png";
+import Vector from "@/public/hd/percent-outline-icon.png";
+import BurgerIcon from "@/public/hd/burger-outline.png";
+import CakeIcon from "@/public/hd/cake-outline-icon.png";
 import Image, { StaticImageData } from "next/image";
 
 const UserActivityPage = async (props: {

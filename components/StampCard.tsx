@@ -30,12 +30,11 @@ const StampCard = () => {
           *T&C Applied
         </span>
       </div>
-      <div className="relative basis-1/2">
+      <div className="basis-1/2">
         <Image
           src={BurgerStamp}
           alt={"diamond-logo"}
-          fill
-          className="object-fit h-full rounded-r-xl"
+          className="h-full rounded-r-xl object-cover"
         />
       </div>
     </div>

@@ -35,7 +35,7 @@ const LoginForm = () => {
   }
 
   return (
-    <div className="px-4">
+    <div className="">
       {/* Scrollable form content */}
       <div className="">
         <Form {...form}>

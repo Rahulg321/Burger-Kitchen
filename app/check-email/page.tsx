@@ -4,7 +4,7 @@ import React from "react";
 
 const CheckEmailPage = () => {
   return (
-    <section className="block-space big-container flex min-h-screen flex-col">
+    <section className="block-space big-container flex min-h-[100dvh] flex-col">
       <div className="relative mb-4 flex w-full items-center">
         <PreviousPageButton />
         <h3 className="font-pduRegular absolute inset-0 mx-auto text-center font-semibold uppercase tracking-wide">

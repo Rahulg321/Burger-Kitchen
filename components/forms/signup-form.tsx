@@ -120,7 +120,7 @@ const SignUpForm = () => {
               )}
             />
           </div>
-          <div className="mb-2 mt-4 space-y-2">
+          <div className="mt-4 space-y-4">
             <FormField
               control={form.control}
               name="email"
@@ -149,7 +149,7 @@ const SignUpForm = () => {
                         <Button
                           variant={"outline"}
                           className={cn(
-                            "w-[240px] w-full pl-3 text-left font-normal",
+                            "w-full pl-3 text-left font-normal",
                             !field.value && "text-muted-foreground",
                           )}
                         >

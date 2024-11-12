@@ -158,7 +158,7 @@ const SignUpForm = () => {
                           ) : (
                             <span>Date of Birth</span>
                           )}
-                          <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                          <CalendarIcon className="ml-auto h-4 w-4 font-semibold text-black opacity-50" />
                         </Button>
                       </FormControl>
                     </PopoverTrigger>

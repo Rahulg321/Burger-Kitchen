@@ -56,7 +56,7 @@ const ReferralPage = () => {
 
       <Button className="mt-4 w-full bg-mainYellow">Share</Button>
       <p className="mt-auto text-center">
-        Powered by <span className="font-bold">RAVING FANS</span>
+        Crafted by <span className="font-bold">RAVING FANS</span>
       </p>
     </section>
   );

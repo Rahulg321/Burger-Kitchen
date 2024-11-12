@@ -36,26 +36,26 @@ const StampCardsPage = () => {
       </div>
 
       <div className="mt-2 flex items-end justify-between">
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center gap-2">
           <Image src={StampBurgerFilled} alt="" width={50} height={50} />
           <span className="text-xs font-semibold">Level 1</span>
         </div>
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center gap-2">
           <Image src={StampBurgerFilled} alt="" width={50} height={50} />
           <span className="text-xs font-semibold">Level 2</span>
         </div>
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center gap-2">
+          <Image src={StampBurgerFilled} alt="" width={50} height={50} />
+          <span className="text-xs font-semibold">Level 3</span>
+        </div>
+
+        <div className="flex flex-col items-center justify-center gap-2">
           <Image src={StampBurgerFilled} alt="" width={50} height={50} />
           <span className="text-xs font-semibold">Level 3</span>
         </div>
 
         <div className="flex flex-col items-center justify-center">
-          <Image src={StampBurgerFilled} alt="" width={50} height={50} />
-          <span className="text-xs font-semibold">Level 3</span>
-        </div>
-
-        <div className="flex flex-col items-center justify-center">
-          <Image src={StampFreeBurger} alt="" width={60} height={60} />
+          <Image src={StampFreeBurger} alt="" width={75} height={75} />
           <span className="text-xs font-semibold">Free Burger!</span>
         </div>
       </div>

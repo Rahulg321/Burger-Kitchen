@@ -10,6 +10,7 @@ import OrderNowDialog from "@/components/dialogs/order-now-dialog";
 import Link from "next/link";
 import FreeChipsDialog from "@/components/dialogs/free-chip-dialog";
 import GBKLogo from "@/public//logos/GBK-Logo.png";
+import Arrow from "@/public/hd/arrow-gbk.png";
 
 export const metadata = {
   title: "Home Page",
@@ -18,7 +19,10 @@ export const metadata = {
 
 const HomePage = () => {
   return (
-    <section className="">
+    <section className="relative">
+      <div className="absolute right-4 top-36 z-10">
+        <Image src={Arrow} alt="arrow" />
+      </div>
       <FreeChipsDialog />
       <div className="bg-mainYellow px-4 pt-10">
         <div className="flex items-center justify-center">

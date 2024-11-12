@@ -33,17 +33,14 @@ export default async function ProfilePage(props: {
             href={`/profile/${12312}/activity`}
             content="Market Reference"
           />
-          <ProfileLinkComponent
-            href={`/profile/${12312}/activity`}
-            content="Personal Code"
-          />
+
           <ProfileLinkComponent
             href={`/profile/${12312}/activity`}
             content="Referral Code"
           />
           <ProfileLinkComponent
             href={`/profile/${12312}/activity`}
-            content="Know more about Raving Fans"
+            content="FAQ"
           />
         </div>
         <div className="mt-6">

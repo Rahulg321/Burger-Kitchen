@@ -46,7 +46,7 @@ const LoginForm = () => {
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <Input placeholder="shadcn" {...field} type="email" />
+                    <Input placeholder="email" {...field} type="email" />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

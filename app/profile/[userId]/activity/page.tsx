@@ -5,6 +5,7 @@ import Vector from "@/public/hd/percent-outline-icon.png";
 import BurgerIcon from "@/public/hd/burger-outline.png";
 import CakeIcon from "@/public/hd/cake-outline-icon.png";
 import Image, { StaticImageData } from "next/image";
+import ArrowVector from "@/public/hd/activity_arrow.png";
 
 const UserActivityPage = async (props: {
   params: Promise<{ userId: string }>;
@@ -122,13 +123,16 @@ function ActivityCard({
   img: StaticImageData;
 }) {
   return (
-    <div className="flex items-center">
-      <div>
-        <Image src={img} alt="Vector" />
-      </div>
-      <div className="ml-4">
-        <h5 className="font-semibold">{heading}</h5>
-        <span className="text-sm">{tagline}</span>
+    <div>
+      <div className="flex items-start">
+        <div className="flex flex-col items-center">
+          <Image src={img} alt="Vector" />
+          <Image src={ArrowVector} alt="Vector" width={20} height={20} />
+        </div>
+        <div className="ml-4">
+          <h5 className="font-semibold">{heading}</h5>
+          <span className="text-sm">{tagline}</span>
+        </div>
       </div>
     </div>
   );
